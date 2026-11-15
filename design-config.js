@@ -1,1 +1,1 @@
-const designConfig = { meteorsEnabled: true, profileImage: '', dividerImage: '' };
+const designConfig = { meteorsEnabled: false, profileImage: './assets/sayu-portrait.png', dividerImage: '' };

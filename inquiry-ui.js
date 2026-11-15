@@ -4,10 +4,10 @@
  function modal(title,message){
    const previous=document.activeElement,dialog=document.createElement('dialog');
    dialog.setAttribute('aria-label',title);
-   dialog.style.cssText='box-sizing:border-box;position:fixed;inset:0;margin:auto;border:1px solid #dfccec;border-radius:24px;padding:32px;max-width:440px;width:calc(100% - 36px);max-height:90vh;overflow:auto;color:#543768;box-shadow:0 0 0 100vmax #29153888,0 24px 90px #3a175940;background:#fffcff;text-align:center;font:14px/1.8 sans-serif;z-index:2147483647;';
-   const star=document.createElement('div');star.textContent='✦';star.style.cssText='font-size:30px;color:#9c70c2';
-   const heading=document.createElement('h3');heading.textContent=title;heading.style.cssText='font:bold 20px/1.5 sans-serif;margin:12px 0;color:#543768;word-break:keep-all';
-   const note=document.createElement('p');note.textContent=message;note.style.cssText='font:13px/1.8 sans-serif;color:#947ba4;white-space:pre-line';
+   dialog.style.cssText='box-sizing:border-box;position:fixed;inset:0;margin:auto;border:1px solid #d8d3dc;border-top:3px solid #6e2599;border-radius:2px;padding:32px;max-width:440px;width:calc(100% - 36px);max-height:90vh;overflow:auto;color:#241c29;box-shadow:0 0 0 100vmax #241c2988,0 16px 48px #241c291a;background:#fff;text-align:left;font:14px/1.8 sans-serif;z-index:2147483647;';
+   const star=document.createElement('div');star.textContent='SAYU / INQUIRY';star.style.cssText='font:700 10px/1.5 sans-serif;letter-spacing:.14em;color:#6e2599';
+   const heading=document.createElement('h3');heading.textContent=title;heading.style.cssText='font:normal 20px/1.5 Ria,sans-serif;margin:16px 0;color:#241c29;word-break:keep-all';
+   const note=document.createElement('p');note.textContent=message;note.style.cssText='font:13px/1.8 sans-serif;color:#68616c;white-space:pre-line';
    const actions=document.createElement('div');actions.style.cssText='display:flex;justify-content:center;gap:10px;margin-top:24px;';
    dialog.append(star,heading,note,actions);document.body.append(dialog);
    const close=()=>{dialog.close();dialog.remove();previous?.focus?.({preventScroll:true});};
@@ -16,11 +16,11 @@
    dialog.showModal();
    return {dialog,note,actions,close};
  }
- function button(text,primary=false){const el=document.createElement('button');el.type='button';el.textContent=text;el.style.cssText=`border:0;border-radius:12px;padding:12px 25px;cursor:pointer;font:bold 13px sans-serif;background:${primary?'#8751b8':'#eee3f7'};color:${primary?'#fff':'#75508e'};`;return el;}
- function manual(text,message){const ui=modal('양식을 붙여넣어 주세요',message);const area=document.createElement('textarea');area.value=text;area.readOnly=true;area.style.cssText='box-sizing:border-box;width:100%;height:180px;margin:15px 0;padding:12px;border:1px solid #ddcbea;border-radius:12px;font:12px/1.6 sans-serif';ui.actions.before(area);const close=button('확인',true);close.onclick=ui.close;ui.actions.append(close);area.select();}
+ function button(text,primary=false){const el=document.createElement('button');el.type='button';el.textContent=text;el.style.cssText=`border:1px solid ${primary?'#6e2599':'#d8d3dc'};border-radius:2px;padding:12px 25px;cursor:pointer;font:bold 13px sans-serif;background:${primary?'#6e2599':'#fff'};color:${primary?'#fff':'#241c29'};`;return el;}
+ function manual(text,message){const ui=modal('양식을 붙여넣어 주세요',message);const area=document.createElement('textarea');area.value=text;area.readOnly=true;area.style.cssText='box-sizing:border-box;width:100%;height:180px;margin:15px 0;padding:12px;border:1px solid #d8d3dc;border-radius:2px;background:#fff;color:#241c29;font:12px/1.6 sans-serif';ui.actions.before(area);const close=button('확인',true);close.onclick=ui.close;ui.actions.append(close);area.select();}
  function prompt(text,copied,onYes){
    const ui=modal('복사된 양식으로 바로 문의창을 여시겠습니까?',copied?'문의 내용만 작성하며 자동으로 보내지 않습니다.':'자동 복사가 차단되어 아래에 양식을 준비했습니다. 문의창에는 같은 내용을 작성합니다.');
-   if(!copied){const area=document.createElement('textarea');area.value=text;area.readOnly=true;area.style.cssText='box-sizing:border-box;width:100%;height:130px;margin-top:16px;padding:10px;border:1px solid #ddcbea;font:12px/1.6 sans-serif';ui.actions.before(area);}
+   if(!copied){const area=document.createElement('textarea');area.value=text;area.readOnly=true;area.style.cssText='box-sizing:border-box;width:100%;height:130px;margin-top:16px;padding:10px;border:1px solid #d8d3dc;border-radius:2px;background:#fff;color:#241c29;font:12px/1.6 sans-serif';ui.actions.before(area);}
    const no=button('아니요'),yes=button('예',true);no.onclick=ui.close;yes.onclick=()=>{ui.close();onYes();};ui.actions.append(no,yes);yes.focus();
  }
  function acknowledge(doc){
