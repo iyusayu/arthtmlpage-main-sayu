@@ -22,6 +22,7 @@ const mainPageConfig = {
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="./design.css">
+<link rel="stylesheet" href="./portfolio-view.css?v=0.0.2">
 <script src="./design-config.js"></script>
 </head>
 <body>
@@ -43,7 +44,7 @@ const mainPageConfig = {
   </div>
  </div><div class="intro-rule" aria-hidden="true"></div>
 </div></section>
-<div class="container sayu-content"><div class="main-accordion"><section class="main-acc-item" id="section-calendar"><div class="main-acc-header open" data-acc="calendar"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">01</span><span class="main-acc-title">작업 슬롯</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-calendar"><div id="sayuSlots" class="sayu-slots" aria-live="polite"></div><p class="sayu-slot-legend">○ 예약 가능 · ● 예약 완료 <span>정확한 일정은 상담 시 확인해 주세요.</span></p><details class="sayu-calendar-detail"><summary>날짜별 작업 일정 보기</summary><div class="calendar-top"><div class="calendar-nav"><button id="calPrev" aria-label="이전 달">❮</button><div class="calendar-month" id="calMonthLabel"></div><button id="calNext" aria-label="다음 달">❯</button></div></div><div class="calendar-grid"><div class="calendar-weekdays"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div><div class="calendar-days" id="calDays"></div></div></details></div></section><section class="main-acc-item" id="section-portfolio"><div class="main-acc-header open" data-acc="portfolio"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">02</span><span class="main-acc-title">포트폴리오</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-portfolio"><div class="portfolio-cat-tabs fade-in"><button class="pf-tab-btn active" data-pftab="image">버츄얼 일러스트</button><button class="pf-tab-btn" data-pftab="video">Live2D 리깅</button></div><div class="portfolio-panel active" id="pf-image"><div class="pf-type-tabs" id="imageTypeTabs"></div><div id="imageTypeSections"></div></div><div class="portfolio-panel" id="pf-video"><div class="pf-type-tabs" id="videoTypeTabs"></div><div id="videoTypeSections"></div></div></div></section><section class="main-acc-item" id="section-process"><div class="main-acc-header open" data-acc="process"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">03</span><span class="main-acc-title">작업 순서</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-process"><article class="sayu-process"><h3>캐릭터 디자인</h3><ol><li>레퍼런스 전달</li><li>디자인 시안 · 컨펌</li><li>시안 완성 후 전달</li></ol></article><article class="sayu-process"><h3>버츄얼 일러스트</h3><ol><li>디자인 확인</li><li>러프 · 컨펌</li><li>선화 및 배색 · 컨펌</li><li>파츠 분리 및 완성</li><li>최종본 전달</li></ol></article><article class="sayu-process"><h3>Live2D 리깅</h3><ol><li>문의</li><li>얼굴 리깅 · 컨펌</li><li>필요 시 디테일 확인</li><li>최종본 전달</li></ol></article><p class="sayu-process-note">수정 요청 시 수정사항을 모두 취합하여 한 번에 전달해 주세요.<br>작업자의 실수로 인한 수정은 언제든지 말씀해 주세요.</p></div></section><section class="main-acc-item" id="section-request"><div class="main-acc-header open" data-acc="request"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">04</span><span class="main-acc-title">견적 안내 &amp; 신청 양식</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-request"><div class="request-wrap fade-in"><div class="estimate-card"><h3>견적 안내</h3><p class="estimate-note">옵션과 수량을 선택하면 아래에 예상 견적이 표시됩니다. 최종 금액은 상담 후 확정됩니다.</p><div class="est-cat-list" id="estCatList"></div><div class="usage-select-group" id="usageGroup"></div><div class="receipt-box" id="receiptBox"><div class="receipt-empty">선택한 항목이 없습니다</div></div></div><div class="form-card"><h3>신청 양식</h3><div class="form-field"><label for="fWorkType">신청 목록</label><textarea id="fWorkType" rows="3" placeholder="신청하실 옵션을 적어주세요. 예) 전신, 추가 표정 -종(빠직, 울먹울먹, 눈하트), 포즈 - 입에 손 등"></textarea></div><div class="form-field"><label for="fDetail">신청 내용과 참고자료</label><textarea id="fDetail" rows="9" placeholder="일러스트: 얼굴, 눈매, 피부색, 의상, 헤어, 키, 체형 등 사진자료를 함께 보내주세요. 디자인 옵션은 대표컬러, 컨셉도 알려주세요.
+<div class="container sayu-content"><div class="main-accordion"><section class="main-acc-item" id="section-calendar"><div class="main-acc-header open" data-acc="calendar"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">01</span><span class="main-acc-title">작업 슬롯</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-calendar"><div id="sayuSlots" class="sayu-slots" aria-live="polite"></div><p class="sayu-slot-legend">○ 예약 가능 · ● 예약 완료 <span>정확한 일정은 상담 시 확인해 주세요.</span></p><details class="sayu-calendar-detail"><summary>날짜별 작업 일정 보기</summary><div class="calendar-top"><div class="calendar-nav"><button id="calPrev" aria-label="이전 달">❮</button><div class="calendar-month" id="calMonthLabel"></div><button id="calNext" aria-label="다음 달">❯</button></div></div><div class="calendar-grid"><div class="calendar-weekdays"><div>일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div>토</div></div><div class="calendar-days" id="calDays"></div></div></details></div></section><section class="main-acc-item" id="section-portfolio"><div class="main-acc-header open" data-acc="portfolio"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">02</span><span class="main-acc-title">포트폴리오</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-portfolio"><p role="status">포트폴리오를 불러오는 중입니다.</p></div></section><section class="main-acc-item" id="section-process"><div class="main-acc-header open" data-acc="process"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">03</span><span class="main-acc-title">작업 순서</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-process"><article class="sayu-process"><h3>캐릭터 디자인</h3><ol><li>레퍼런스 전달</li><li>디자인 시안 · 컨펌</li><li>시안 완성 후 전달</li></ol></article><article class="sayu-process"><h3>버츄얼 일러스트</h3><ol><li>디자인 확인</li><li>러프 · 컨펌</li><li>선화 및 배색 · 컨펌</li><li>파츠 분리 및 완성</li><li>최종본 전달</li></ol></article><article class="sayu-process"><h3>Live2D 리깅</h3><ol><li>문의</li><li>얼굴 리깅 · 컨펌</li><li>필요 시 디테일 확인</li><li>최종본 전달</li></ol></article><p class="sayu-process-note">수정 요청 시 수정사항을 모두 취합하여 한 번에 전달해 주세요.<br>작업자의 실수로 인한 수정은 언제든지 말씀해 주세요.</p></div></section><section class="main-acc-item" id="section-request"><div class="main-acc-header open" data-acc="request"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">04</span><span class="main-acc-title">견적 안내 &amp; 신청 양식</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-request"><div class="request-wrap fade-in"><div class="estimate-card"><h3>견적 안내</h3><p class="estimate-note">옵션과 수량을 선택하면 아래에 예상 견적이 표시됩니다. 최종 금액은 상담 후 확정됩니다.</p><div class="est-cat-list" id="estCatList"></div><div class="usage-select-group" id="usageGroup"></div><div class="receipt-box" id="receiptBox"><div class="receipt-empty">선택한 항목이 없습니다</div></div></div><div class="form-card"><h3>신청 양식</h3><div class="form-field"><label for="fWorkType">신청 목록</label><textarea id="fWorkType" rows="3" placeholder="신청하실 옵션을 적어주세요. 예) 전신, 추가 표정 -종(빠직, 울먹울먹, 눈하트), 포즈 - 입에 손 등"></textarea></div><div class="form-field"><label for="fDetail">신청 내용과 참고자료</label><textarea id="fDetail" rows="9" placeholder="일러스트: 얼굴, 눈매, 피부색, 의상, 헤어, 키, 체형 등 사진자료를 함께 보내주세요. 디자인 옵션은 대표컬러, 컨셉도 알려주세요.
 
 리깅: 모델의 성격 및 추구미(분위기), 모델의 중요 포인트와 특히 신경 써줬으면 하는 점을 알려주세요."></textarea></div><div class="form-field"><label for="fEtc">추가 요청사항</label><textarea id="fEtc" rows="3" placeholder="추가 옵션은 일러스트+리깅을 같이 의뢰하실 경우 수량을 2로 선택해 주세요. iOS 기능은 제외합니다."></textarea></div><div class="form-field"><label for="fDebut">공개 / 데뷔 일정 여부</label><textarea id="fDebut" rows="4" placeholder="의향에 따라 데뷔 전까지 공개하지 않습니다. 완성 후 3달 이상 비공개는 50,000원이 추가됩니다. 작가 개인 SNS에 작업 과정 공개 허용 시 30,000원 할인됩니다."></textarea></div><label class="sayu-discount"><input type="checkbox" id="fProcessShare">작가 개인 SNS에 작업 과정 공개 허용 (30,000원 할인)</label><button class="form-copy-btn" id="formCopyBtn">양식 + 견적 복사하기</button><div class="copy-toast" id="copyToast" role="status"></div></div></div></div></section><section class="main-acc-item" id="section-notice"><div class="main-acc-header open" data-acc="notice"><div class="main-acc-header-left"><span class="main-acc-icon" aria-hidden="true">05</span><span class="main-acc-title">안내사항</span></div><span class="main-acc-arrow">−</span></div><div class="main-acc-body open" id="acc-body-notice"><details class="sayu-notice" open><summary>예약 선입금 안내</summary><p>모든 예약은 선입금(예약금) 기준으로 일정이 확정됩니다.</p><p>선입금은 예약 확정 시점에 기본금액의 10%입니다. 총 견적의 잔금은 예약된 달이 시작되는 시점에 입금해 주셔도 됩니다.</p></details><details class="sayu-notice" open><summary>작업 기간</summary><p>캐릭터 디자인 · 입금일로부터 7일</p><p>버츄얼 일러스트 · 입금일로부터 3~4주<br>리깅 · 입금일로부터 2~3주</p></details><details class="sayu-notice" open><summary>저작권 안내</summary><p>작품의 저작권은 작가에게 있습니다.</p><p>2차 가공이나 굿즈 제작 등의 상업적 이용은 상업이용권 구매가 필요합니다. 사전 협의 없는 상업적 이용이 확인될 경우 규정에 따라 2배 금액이 청구됩니다. 추후 필요 시 따로 구매도 가능합니다.</p></details><details class="sayu-notice" open><summary>기본 사이즈</summary><p>4500px · 300dpi</p><p>요청 시 사이즈 변경 가능합니다.</p></details><details class="sayu-notice" open><summary>포트폴리오 공개</summary><p>작업물은 샘플 및 포트폴리오 용도로 공개될 수 있습니다.</p><p>무단 2차 수정, 트레이싱, 양도, AI 학습 등은 금지되어 있습니다.</p></details></div></section></div></div>
 
@@ -54,7 +55,7 @@ const mainPageConfig = {
   <img class="lightbox-img" id="lightboxImg" src="" alt="">
 </div>
 
-<script src="./portfolio-carousel.js"></script>
+<script src="./portfolio-carousel.js?v=0.0.2"></script>
 <script>
 /* ============================================================
    TOPNAV
@@ -90,7 +91,7 @@ document.querySelectorAll('.main-acc-header').forEach(header=>{
     const isOpen=header.classList.contains('open');
     header.classList.toggle('open',!isOpen);
     body.classList.toggle('open',!isOpen);
-    if(!isOpen){setTimeout(()=>{resizeAllSliders();resizeAllImgSliders();},50);}
+
   });
 });
 
@@ -148,162 +149,7 @@ renderCalendar(calYear,calMonth);
 /* ============================================================
    포트폴리오
 ============================================================ */
-// Firebase 포트폴리오는 portfolio-sync.js에서 실시간으로 렌더링합니다.
-
-function buildYoutubeSlider(typeData,contEl,tabsEl){
-  tabsEl.innerHTML='';contEl.innerHTML='';
-  typeData.forEach((cat,idx)=>{
-    const btn=document.createElement('button');
-    btn.className='pf-type-btn'+(idx===0?' active':'');
-    btn.textContent=cat.title;btn.dataset.typeIdx=idx;
-    tabsEl.appendChild(btn);
-    const sec=document.createElement('div');
-    sec.className='pf-type-section'+(idx===0?' active':'');
-    sec.dataset.typeIdx=idx;
-    const root=document.createElement('div');root.className='slider-root';
-    const stage=document.createElement('div');stage.className='slider-stage';
-    cat.videos.forEach((vid,i)=>{
-      const slide=document.createElement('div');
-      slide.className='slider-slide'+(i===0?' active':'');
-      // yt-nocookie 도메인 + 파라미터로 오류 153 회피
-      const iframe=document.createElement('iframe');
-      iframe.src=`https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1`;
-      iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      iframe.allowFullscreen=true;
-      iframe.setAttribute('loading','lazy');
-      slide.appendChild(iframe);stage.appendChild(slide);
-    });
-    const pBtn=document.createElement('button');pBtn.className='slider-btn prev';pBtn.textContent='❮';
-    const nBtn=document.createElement('button');nBtn.className='slider-btn next';nBtn.textContent='❯';
-    stage.appendChild(pBtn);stage.appendChild(nBtn);
-    const dotsEl=document.createElement('div');dotsEl.className='slider-dots';
-    const twrap=document.createElement('div');twrap.className='slider-thumbs-wrap';
-    const thumbs=document.createElement('div');thumbs.className='slider-thumbs';
-    cat.videos.forEach((vid,i)=>{
-      const tb=document.createElement('button');tb.className='slider-thumb-btn'+(i===0?' active':'');
-      const img=document.createElement('img');
-      img.src=`https://img.youtube.com/vi/${vid}/hqdefault.jpg`;img.alt=`썸네일${i+1}`;
-      tb.appendChild(img);thumbs.appendChild(tb);
-    });
-    twrap.appendChild(thumbs);
-    root.appendChild(stage);root.appendChild(dotsEl);root.appendChild(twrap);
-    sec.appendChild(root);contEl.appendChild(sec);
-    initSlider(root,cat.videos.length);
-  });
-  tabsEl.querySelectorAll('.pf-type-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const idx=btn.dataset.typeIdx;
-      tabsEl.querySelectorAll('.pf-type-btn').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      contEl.querySelectorAll('.pf-type-section').forEach(s=>s.classList.toggle('active',s.dataset.typeIdx===idx));
-      setTimeout(()=>resizeAllSliders(),10);
-    });
-  });
-}
-
-function buildImageSlider(typeData,contEl,tabsEl){
-  tabsEl.innerHTML='';contEl.innerHTML='';
-  typeData.forEach((cat,idx)=>{
-    const btn=document.createElement('button');
-    btn.className='pf-type-btn'+(idx===0?' active':'');
-    btn.textContent=cat.title;btn.dataset.typeIdx=idx;
-    tabsEl.appendChild(btn);
-    const sec=document.createElement('div');
-    sec.className='pf-type-section'+(idx===0?' active':'');
-    sec.dataset.typeIdx=idx;
-    const root=document.createElement('div');root.className='img-slider-root';
-    const stage=document.createElement('div');stage.className='img-stage';
-    cat.images.forEach((src,i)=>{
-      const slide=document.createElement('div');slide.className='img-slide'+(i===0?' active':'');
-      const img=document.createElement('img');img.src=src;img.alt=`${cat.title} ${i+1}`;
-      slide.appendChild(img);stage.appendChild(slide);
-    });
-    const pBtn=document.createElement('button');pBtn.className='slider-btn prev';pBtn.textContent='❮';
-    const nBtn=document.createElement('button');nBtn.className='slider-btn next';nBtn.textContent='❯';
-    stage.appendChild(pBtn);stage.appendChild(nBtn);
-    const dotsEl=document.createElement('div');dotsEl.className='slider-dots';
-    const twrap=document.createElement('div');twrap.className='slider-thumbs-wrap';
-    const thumbs=document.createElement('div');thumbs.className='slider-thumbs';
-    cat.images.forEach((src,i)=>{
-      const tb=document.createElement('button');tb.className='slider-thumb-btn'+(i===0?' active':'');
-      const img=document.createElement('img');img.src=src;img.alt=`thumb${i+1}`;
-      tb.appendChild(img);thumbs.appendChild(tb);
-    });
-    twrap.appendChild(thumbs);
-    root.appendChild(stage);root.appendChild(dotsEl);root.appendChild(twrap);
-    sec.appendChild(root);contEl.appendChild(sec);
-    initImgSlider(root,cat.images);
-  });
-  tabsEl.querySelectorAll('.pf-type-btn').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const idx=btn.dataset.typeIdx;
-      tabsEl.querySelectorAll('.pf-type-btn').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active');
-      contEl.querySelectorAll('.pf-type-section').forEach(s=>s.classList.toggle('active',s.dataset.typeIdx===idx));
-      setTimeout(()=>resizeAllImgSliders(),10);
-    });
-  });
-}
-
-function initSlider(root,total){
-  const stage=root.querySelector('.slider-stage');
-  const carousel=initPortfolioCarousel(root,'.slider-slide');
-  function resize(){
-    const w=stage.clientWidth;
-    stage.style.height=(w*9/16)+'px';
-    const iw=Math.min(w*0.96,880);
-    root.querySelectorAll('iframe').forEach(f=>{f.style.width=iw+'px';f.style.height=(iw*9/16)+'px';});
-    const tw=Math.max(window.innerWidth*0.14,100);
-    root.querySelectorAll('.slider-thumb-btn').forEach(b=>{b.style.width=tw+'px';b.style.height=(tw*9/16)+'px';});
-    carousel.center('auto');
-  }
-  resize();window.addEventListener('resize',resize);root._resize=resize;
-}
-
-function initImgSlider(root,images){
-  const stage=root.querySelector('.img-stage');
-  const carousel=initPortfolioCarousel(root,'.img-slide');
-  stage.addEventListener('click',event=>{
-    // 이미지 자체를 클릭했을 때만 확대합니다. 화살표 클릭은 이동만 합니다.
-    if(!event.target.matches('.img-slide.active img')) return;
-    openPortfolioImage(event.target.src,event.target.alt);
-  });
-  function resize(){
-    const w=stage.clientWidth;stage.style.height=(w*9/16)+'px';
-    const tw=Math.max(window.innerWidth*0.14,100);
-    root.querySelectorAll('.slider-thumb-btn').forEach(b=>{b.style.width=tw+'px';b.style.height=(tw*9/16)+'px';});
-    carousel.center('auto');
-  }
-  resize();window.addEventListener('resize',resize);root._resize=resize;
-}
-
-function resizeAllSliders(){document.querySelectorAll('.slider-root').forEach(r=>{if(r._resize)r._resize();});}
-function resizeAllImgSliders(){document.querySelectorAll('.img-slider-root').forEach(r=>{if(r._resize)r._resize();});}
-
-document.querySelectorAll('.pf-tab-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.pf-tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const tab=btn.dataset.pftab;
-    document.querySelectorAll('.portfolio-panel').forEach(p=>p.classList.toggle('active',p.id===`pf-${tab}`));
-    setTimeout(()=>{resizeAllSliders();resizeAllImgSliders();},20);
-  });
-});
-
-document.getElementById('videoTypeSections').textContent='포트폴리오를 불러오는 중입니다...';
-document.getElementById('imageTypeSections').textContent='포트폴리오를 불러오는 중입니다...';
-
-/* ============================================================
-   라이트박스
-============================================================ */
-
-
-/* ============================================================
-   견적 계산기
-============================================================ */
-/* ============================================================
-   fade-in
-============================================================ */
+// 페이지 섹션 등장 효과
 const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.05});
@@ -317,13 +163,14 @@ window.addEventListener('load',()=>parent.postMessage({type:'sliderHeight',value
 <script src="./inquiry-ui.js"></script>
 <script src="./setting.js"></script>
 <script src="./sayu-slots.js"></script>
-<script src="./portfolio-grid.js"></script>
+<script src="./portfolio-model.js?v=0.0.2"></script>
+<script src="./portfolio-view.js?v=0.0.2"></script>
 <script src="./design.js"></script>
 <script src="./estimate.js"></script>
 <script src="./analytics-geometry.js"></script>
 <script src="./firebase-analytics.js"></script>
 <script src="./analytics-runtime.js"></script>
-<script type="module" src="./portfolio-sync.js"></script>
+<script type="module" src="./portfolio-sync.js?v=0.0.2"></script>
 <footer class="site-footer container"><span>SAYU</span><span>ILLUSTRATION &amp; LIVE2D</span><a href="./privacy.html">방문 통계 안내 ↗</a></footer>
 </body>
 </html>
