@@ -54,19 +54,11 @@
   gap: 10px;
   margin-bottom: 16px;
 }
-.pv-secondary {
-  box-sizing: border-box;
-  width: min(290px, 100%);
+.pv-controls .pv-secondary-tabs {
+  flex: 1 1 190px;
+  min-width: 0;
   max-width: 100%;
-  min-height: 40px;
-  padding: 8px 12px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  background: var(--white, white);
-  color: var(--text);
-  font: inherit;
-  font-size: 14px;
-  cursor: pointer;
+  margin: 0;
 }
 .pv-mode { min-height: 36px; margin-left: auto; }
 .pv-primary-nav[hidden], .pv-controls[hidden], .pv-mode[hidden], .pv-status[hidden] { display: none; }
@@ -121,11 +113,9 @@
 }
 .sayu-content .pv-tabs .pf-tab-btn { flex-grow: 0; }
 .sayu-content .pv-primary-nav { gap: 10px; }
-.sayu-content .pv-secondary { font-size: 13px; }
 @media (max-width: 700px) {
   .pv-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pv-primary-nav { gap: 4px; }
   .pv-scroll { min-width: 26px; }
   .pv-controls { gap: 6px; }
-  .pv-secondary { width: auto; max-width: 60%; flex: 1 1 120px; }
 }

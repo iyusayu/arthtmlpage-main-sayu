@@ -161,10 +161,10 @@
     tabs.addEventListener('scroll', updateScrollButtons, {passive:true});
 
     const controls = element('div', 'pv-controls');
-    const select = element('select', 'pv-secondary');
-    select.setAttribute('aria-label', '2차 카테고리 선택');
+    const secondaryTabs = element('nav', 'pf-type-tabs pv-secondary-tabs');
+    secondaryTabs.setAttribute('aria-label', '2차 카테고리 선택');
     const modeButton = button('portfolio-mode pv-mode', '슬라이드로 보기');
-    controls.append(select, modeButton);
+    controls.append(secondaryTabs, modeButton);
     const status = element('p', 'pv-status', '포트폴리오를 불러오는 중입니다.');
     status.setAttribute('role', 'status');
     const section = element('div', 'pf-type-section active pv-section');
@@ -234,12 +234,34 @@
       }
       updateScrollButtons();
 
-      const options = JSON.stringify(secondaries.map(([id, entry]) => [id, entry.name]));
-      if (options !== secondarySignature) {
-        select.replaceChildren(...secondaries.map(([id, entry]) => new Option(entry.name, id)));
-        secondarySignature = options;
+      const secondaryList = JSON.stringify(secondaries.map(([id, entry]) => [id, entry.name]));
+      if (secondaryList !== secondarySignature) {
+        secondaryTabs.replaceChildren();
+        secondarySignature = secondaryList;
+        for (const [id, entry] of secondaries) {
+          const tab = button('pf-type-btn', entry.name, entry.name);
+          tab.dataset.secondaryId = id;
+          tab.onclick = () => {
+            if (selectedSecondary === id) return;
+            manuallySelected = true;
+            selectedSecondary = id;
+            slideKey = null;
+            render();
+          };
+          secondaryTabs.append(tab);
+        }
       }
-      select.value = selectedSecondary || '';
+      for (const tab of secondaryTabs.children) {
+        const active = tab.dataset.secondaryId === selectedSecondary;
+        const changed = tab.classList.contains('active') !== active;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-pressed', String(active));
+        if (active && changed) {
+          const box = tab.getBoundingClientRect();
+          const area = secondaryTabs.getBoundingClientRect();
+          secondaryTabs.scrollLeft += box.left - area.left - (area.width - box.width) / 2;
+        }
+      }
       status.hidden = !!works.length;
       if (!works.length) {
         status.textContent = !primaries.length ? '등록된 포트폴리오가 없습니다.'
@@ -261,13 +283,6 @@
         renderGrid(section, works, originalCategory);
       }
     }
-
-    select.onchange = () => {
-      manuallySelected = true;
-      selectedSecondary = select.value;
-      slideKey = null;
-      render();
-    };
 
     function showInitialError() {
       if (!data) {
