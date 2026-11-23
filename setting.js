@@ -7,7 +7,7 @@ window.sayuSettings = {
   slots: {
     startMonth: '2026-11',
     months: {
-      '2026-11': { total: 2, booked: 0 },
+      '2026-11': { total: 2, booked: 2 },
       '2026-12': { total: 2, booked: 0 },
       '2027-01': { total: 2, booked: 0 }
     }
